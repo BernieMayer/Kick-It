@@ -953,7 +953,7 @@ GameObject:
   - component: {fileID: 682801768}
   - component: {fileID: 682801767}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: KickButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1022,7 +1022,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 682801768}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2122449454}
+        m_TargetAssemblyTypeName: ProtoGameEventSystem, Assembly-CSharp
+        m_MethodName: KickEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &682801768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,7 +1744,7 @@ GameObject:
   - component: {fileID: 1848245292}
   - component: {fileID: 1848245291}
   m_Layer: 5
-  m_Name: Button
+  m_Name: JabButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1801,7 +1813,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1848245292}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2122449454}
+        m_TargetAssemblyTypeName: ProtoGameEventSystem, Assembly-CSharp
+        m_MethodName: JabEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1848245292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1918,7 +1942,7 @@ GameObject:
   - component: {fileID: 1875080786}
   - component: {fileID: 1875080785}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: CrossButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1987,7 +2011,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1875080786}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2122449454}
+        m_TargetAssemblyTypeName: ProtoGameEventSystem, Assembly-CSharp
+        m_MethodName: CrossEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1875080786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2139,6 +2175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSequenceText: {fileID: 1479516047}
+  boxer: {fileID: 188390893}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

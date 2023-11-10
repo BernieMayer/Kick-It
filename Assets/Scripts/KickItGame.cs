@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class KickItGame : MonoBehaviour
+public class KickItGame : ScriptableObject
 {
 
     public Move[] moves;
