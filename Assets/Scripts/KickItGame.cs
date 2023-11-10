@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class KickItGame : MonoBehaviour
 {
+
+    public Move[] moves;
+    public ArrayList currentMoves;
     
     public enum Move
     {
@@ -26,8 +29,15 @@ public class KickItGame : MonoBehaviour
             int randomIndex = rand.Next(Enum.GetValues(typeof(Move)).Length);
             moves[i] = (Move)Enum.GetValues(typeof(Move)).GetValue(randomIndex);
         }
-        
+
+        this.moves = moves;
+        this.currentMoves = new ArrayList();
         return moves;
+    }
+
+    public void AddMove(Move move) 
+    {
+        currentMoves.Add(move);
     }
 
 }
