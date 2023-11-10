@@ -8,6 +8,8 @@ public class KickItGame : ScriptableObject
 
     public Move[] moves;
     public ArrayList currentMoves;
+    bool gameOver = false;
+    public int Score = 0; 
     
     public enum Move
     {
@@ -15,6 +17,7 @@ public class KickItGame : ScriptableObject
         Cross,
         Kick
     }
+
 
     public Move[] GenerateMoves() 
     {
@@ -38,6 +41,29 @@ public class KickItGame : ScriptableObject
     public void AddMove(Move move) 
     {
         currentMoves.Add(move);
+
+        int i = 0;
+        foreach (Move userMove in currentMoves) {
+            if (moves[i] != userMove) {
+                gameOver = true;
+                break;
+            }
+
+            i++;
+        }
+
+        if (!gameOver) {
+            this.Score++;
+
+            if (i == moves.Length) {
+                this.GenerateMoves();
+            }
+        } 
+    }
+
+    public bool IsGameOver() 
+    {
+        return gameOver;
     }
 
 }

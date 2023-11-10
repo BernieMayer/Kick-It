@@ -2310,6 +2310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSequenceText: {fileID: 1479516047}
+  scoreText: {fileID: 1822775274}
   boxer: {fileID: 188390893}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

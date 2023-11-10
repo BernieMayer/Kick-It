@@ -9,6 +9,7 @@ public class ProtoGameEventSystem : MonoBehaviour
 {
     KickItGame game;
    	public TextMeshProUGUI currentSequenceText;
+    public TextMeshProUGUI scoreText;
     public GameObject boxer;
     Animator boxerAnimator;
     // Start is called before the first frame update
@@ -16,24 +17,41 @@ public class ProtoGameEventSystem : MonoBehaviour
     {
         boxerAnimator = boxer.GetComponent<Animator>();
         game = new KickItGame();
-        var moves = game.GenerateMoves();
-        string currentSequence = string.Join(", ", moves.Select(m => m.ToString()));
-        currentSequenceText.SetText(currentSequence);
+        game.GenerateMoves();
+        UpdateGameUI();
     }
 
     public void JabEvent()
     {
         boxerAnimator.SetTrigger("Jab");
+        game.AddMove(KickItGame.Move.Jab);
+        UpdateGameUI();
     }
 
     public void CrossEvent()
     {
         boxerAnimator.SetTrigger("Cross");
+        game.AddMove(KickItGame.Move.Cross);
+        UpdateGameUI();
     }
 
     public void KickEvent() 
     {
         boxerAnimator.SetTrigger("Kick");
+        game.AddMove(KickItGame.Move.Kick);
+        UpdateGameUI();
+    }
+
+    void UpdateGameUI()
+    {
+        var moves = game.moves;
+        string currentSequence = string.Join(", ", moves.Select(m => m.ToString()));
+        currentSequenceText.SetText(currentSequence);
+        if (!game.IsGameOver()) {
+            scoreText.SetText("Score: " + game.Score);
+        } else {
+            scoreText.SetText("Game Over :(");
+        }
     }
 
     // Update is called once per frame
