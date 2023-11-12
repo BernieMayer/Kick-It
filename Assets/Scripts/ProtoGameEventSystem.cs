@@ -10,6 +10,7 @@ public class ProtoGameEventSystem : MonoBehaviour
     KickItGame game;
    	public TextMeshProUGUI currentSequenceText;
     public TextMeshProUGUI scoreText;
+    public Button retryButton;
     public GameObject boxer;
     Animator boxerAnimator;
     // Start is called before the first frame update
@@ -18,6 +19,15 @@ public class ProtoGameEventSystem : MonoBehaviour
         boxerAnimator = boxer.GetComponent<Animator>();
         game = new KickItGame();
         game.GenerateMoves();
+
+        // retryButton.gameObect.setActive(false);
+        UpdateGameUI();
+    }
+
+    public void Retry() {
+        game = new KickItGame();
+        game.GenerateMoves();
+
         UpdateGameUI();
     }
 
