@@ -17,7 +17,7 @@ public class ProtoGameEventSystem : MonoBehaviour
     void Start()
     {
         boxerAnimator = boxer.GetComponent<Animator>();
-        game = new KickItGame();
+        game = ScriptableObject.CreateInstance<KickItGame>();
         game.GenerateMoves();
 
         // retryButton.gameObect.setActive(false);
@@ -25,7 +25,7 @@ public class ProtoGameEventSystem : MonoBehaviour
     }
 
     public void Retry() {
-        game = new KickItGame();
+        game = ScriptableObject.CreateInstance<KickItGame>();
         game.GenerateMoves();
 
         UpdateGameUI();
