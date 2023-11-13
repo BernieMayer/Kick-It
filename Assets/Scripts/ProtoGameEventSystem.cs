@@ -19,8 +19,6 @@ public class ProtoGameEventSystem : MonoBehaviour
         boxerAnimator = boxer.GetComponent<Animator>();
         game = ScriptableObject.CreateInstance<KickItGame>();
         game.GenerateMoves();
-
-        // retryButton.gameObect.setActive(false);
         UpdateGameUI();
     }
 
