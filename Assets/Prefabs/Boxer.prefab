@@ -1208,7 +1208,7 @@ MonoBehaviour:
   - m_Name: Right Arm
     m_Hash: 0
     m_CategoryList:
-    - m_Name: Entry
+    - m_Name: Blue Right Arm
       m_Hash: 0
       m_Sprite: {fileID: 1709870681986902758, guid: 72e73b47a9a7b422d8d4dab1064a64ea, type: 3}
   m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: 52c22e326e2c5401d81e6326f653a9f3, type: 3}
