@@ -66,8 +66,13 @@ MonoBehaviour:
       m_Sprite: {fileID: 1914621012385855286, guid: 8a84ea55d5fc74c30979c46f409035dc, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 1914621012385855286, guid: 8a84ea55d5fc74c30979c46f409035dc, type: 3}
+    - m_Name: Blue Right Arm
+      m_Hash: 1033290523
+      m_Sprite: {fileID: 1709870681986902758, guid: 72e73b47a9a7b422d8d4dab1064a64ea, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1709870681986902758, guid: 72e73b47a9a7b422d8d4dab1064a64ea, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 1
+    m_EntryOverrideCount: 2
   - m_Name: Right Leg
     m_Hash: 17026846
     m_CategoryList: []
@@ -80,5 +85,5 @@ MonoBehaviour:
     m_FromMain: 0
     m_EntryOverrideCount: 1
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638356880860321150
+  m_ModificationHash: 638359475006721290
   m_Version: 1
