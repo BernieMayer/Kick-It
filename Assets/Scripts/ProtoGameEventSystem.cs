@@ -13,6 +13,11 @@ public class ProtoGameEventSystem : MonoBehaviour
     public Button retryButton;
     public GameObject boxer;
     Animator boxerAnimator;
+    bool showingHelpUI = false;
+
+    public GameObject helpSequenceText;
+    public GameObject helpButtons;
+    public TextMeshProUGUI helpText;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +32,22 @@ public class ProtoGameEventSystem : MonoBehaviour
         game.GenerateMoves();
 
         UpdateGameUI();
+    }
+
+    public void HelpPressed() 
+    {
+        showingHelpUI = !showingHelpUI;
+
+        helpSequenceText.SetActive(showingHelpUI);
+        helpButtons.SetActive(showingHelpUI);
+        
+        if (showingHelpUI) 
+        {
+            helpText.SetText("Done");
+        } else 
+        {
+            helpText.SetText("Help");
+        }
     }
 
     public void JabEvent()
