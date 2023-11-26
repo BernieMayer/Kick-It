@@ -21,7 +21,7 @@ public class KickItGame : ScriptableObject
 
     public Move[] GenerateMoves() 
     {
-        int arraySize = 3;
+        int arraySize = NumMovesToGenerate();
 
         Move[] moves = new Move[arraySize];
 
@@ -36,6 +36,19 @@ public class KickItGame : ScriptableObject
         this.moves = moves;
         this.currentMoves = new ArrayList();
         return moves;
+    }
+
+    private int NumMovesToGenerate()
+    {
+        if (Score < 20) 
+        {
+            return 3;
+        } else if (Score < 40) {
+            return 4;
+        } else {
+            return 5;
+        }
+
     }
 
     public void AddMove(Move move) 
