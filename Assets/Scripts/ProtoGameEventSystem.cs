@@ -18,6 +18,7 @@ public class ProtoGameEventSystem : MonoBehaviour
     public GameObject helpSequenceText;
     public GameObject helpButtons;
     public TextMeshProUGUI helpText;
+    public GameObject gameOverText;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +31,9 @@ public class ProtoGameEventSystem : MonoBehaviour
     public void Retry() {
         game = ScriptableObject.CreateInstance<KickItGame>();
         game.GenerateMoves();
+
+        gameOverText.SetActive(false);
+        boxer.SetActive(true);
 
         UpdateGameUI();
     }
@@ -79,8 +83,14 @@ public class ProtoGameEventSystem : MonoBehaviour
         if (!game.IsGameOver()) {
             scoreText.SetText("Score: " + game.Score);
         } else {
-            scoreText.SetText("Game Over :(");
+            UpdateGameOverUI();
         }
+    }
+
+    void UpdateGameOverUI() 
+    {
+        gameOverText.SetActive(true);
+        boxer.SetActive(false);
     }
 
     // Update is called once per frame
