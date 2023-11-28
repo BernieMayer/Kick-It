@@ -4,19 +4,22 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-public class TestKickItGane
+public class Test
 {
     // A Test behaves as an ordinary method
     [Test]
-    public void TestKickItGaneSimplePasses()
+    public void TestSimplePasses()
     {
         // Use the Assert class to test conditions
+        var x = 3;
+
+        Assert.That(x == 3);
     }
 
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
     // `yield return null;` to skip a frame.
     [UnityTest]
-    public IEnumerator TestKickItGaneWithEnumeratorPasses()
+    public IEnumerator TestWithEnumeratorPasses()
     {
         // Use the Assert class to test conditions.
         // Use yield to skip a frame.
