@@ -16,7 +16,8 @@ public class TestKickItGame
     }
 
     [Test]
-    public void TestKickItGameGameOver() {
+    public void TestKickItGameGameOver() 
+    {
         KickItGame game = ScriptableObject.CreateInstance<KickItGame>();
         KickItGame.Move[] moves = {KickItGame.Move.Jab, KickItGame.Move.Jab};
 
@@ -26,6 +27,26 @@ public class TestKickItGame
         game.AddMove(KickItGame.Move.Cross);
 
         Assert.That(game.IsGameOver()); 
+    }
+
+    [Test]
+    public void TestKickItGameScoreGoesUp() 
+    {
+        KickItGame game = ScriptableObject.CreateInstance<KickItGame>();
+        KickItGame.Move[] moves = {KickItGame.Move.Jab, KickItGame.Move.Jab, KickItGame.Move.Kick};
+
+        game.moves = moves;
+        game.currentMoves = new ArrayList();
+
+        game.AddMove(KickItGame.Move.Jab);
+        Assert.That(game.Score == 1);
+
+        game.AddMove(KickItGame.Move.Jab);
+        Assert.That(game.Score == 2);
+
+        game.AddMove(KickItGame.Move.Kick);
+        Assert.That(game.Score == 3);
+
     }
 
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
